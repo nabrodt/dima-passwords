@@ -16,7 +16,8 @@ public class System1 {
      * System 1
      * <p>
      * Length: 5 signs
-     * allowed signs: uppercase and lowercase latin letters and digits 0 to 9 with repetitions
+     * allowed signs: uppercase and lowercase latin letters and digits 0 to 9 with
+     * repetitions
      * SHA1-hash: 7738d1909d7dee18196f733d0d508d871d05cc8
      */
 
@@ -38,7 +39,8 @@ public class System1 {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
-        if (messageDigest == null) return;
+        if (messageDigest == null)
+            return;
 
         char[] s1_charArray = allowedSigns.toCharArray();
 
@@ -47,7 +49,8 @@ public class System1 {
                 for (int k = 0; k < s1_charArray.length; k++) {
                     for (int l = 0; l < s1_charArray.length; l++) {
                         for (int m = 0; m < s1_charArray.length; m++) {
-                            String combination = "" + s1_charArray[i] + s1_charArray[j] + s1_charArray[k] + s1_charArray[l] + s1_charArray[m];
+                            String combination = "" + s1_charArray[i] + s1_charArray[j] + s1_charArray[k]
+                                    + s1_charArray[l] + s1_charArray[m];
 
                             messageDigest.update(combination.getBytes());
                             byte[] digest = messageDigest.digest();
